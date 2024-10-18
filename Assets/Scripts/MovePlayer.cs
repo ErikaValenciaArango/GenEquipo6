@@ -9,6 +9,7 @@ public class MovePlayer : MonoBehaviour
     private bool tocaSuelo;
     private float horizontal;
     public float speed;
+    public bool gameOver =false;
     void Start()
     {
         rgbdPlayer = GetComponent<Rigidbody2D>();
@@ -24,11 +25,11 @@ public class MovePlayer : MonoBehaviour
             transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0, 0));
         }
 
-        if( Input.GetKeyDown(KeyCode.Space)&& tocaSuelo)
+        if (Input.GetKeyDown(KeyCode.Space) && tocaSuelo)
         {
             rgbdPlayer.velocity = Vector3.zero;
 
-            rgbdPlayer.AddForce(transform.up * jumpForce * Time.deltaTime , ForceMode2D.Impulse );
+            rgbdPlayer.AddForce(transform.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
             tocaSuelo = false;
         }
 
@@ -42,7 +43,7 @@ public class MovePlayer : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag ("Suelo"))
+        if (collision.gameObject.CompareTag("Suelo"))
         {
             tocaSuelo = false;
         }
