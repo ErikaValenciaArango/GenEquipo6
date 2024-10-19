@@ -511,6 +511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8071540341110941106, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8384736818652260876, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -603,6 +607,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 143149835}
   - {fileID: 1560225238}
+  - {fileID: 2983456821460467573}
   - {fileID: 1324549225126220929}
   - {fileID: 1631782364}
-  - {fileID: 2983456821460467573}
