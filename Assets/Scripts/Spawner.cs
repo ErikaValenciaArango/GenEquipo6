@@ -14,7 +14,9 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if(GameObject.Find("Player").GetComponent<MovePlayer>().gameOver){
+        StopAllCoroutines();
+       }
     }
 
     private IEnumerator SpawnObstacle()
@@ -23,11 +25,11 @@ public class Spawner : MonoBehaviour
         {
             //Creacion de enemigos
             int randomindex = Random.Range(0, spawn.Length);
-            float minTime = 0.6f;
-            float maxTime = 1.8f;
+            float minTime = 1f;
+            float maxTime = 1.9f;
             float randomTime = Random.Range(minTime, maxTime);
 
-            Instantiate(spawn[randomindex], transform.position, Quaternion.identity);
+            Instantiate(spawn[randomindex], new Vector2(transform.position.x, spawn[randomindex].transform.position.y), Quaternion.identity);
             yield return new WaitForSeconds(randomTime);
         }
     }
