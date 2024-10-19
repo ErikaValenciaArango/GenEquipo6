@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
     Rigidbody2D rgbdPlayer;
+    private int ammo = 0;
     public float jumpForce = 1000;
     private bool tocaSuelo;
     public float speed;
@@ -17,6 +16,7 @@ public class MovePlayer : MonoBehaviour
     private Animator playerAnimator;
     public AudioClip jumpClip;
 
+    [SerializeField]TextMeshProUGUI textAmmo;
 
     void Start()
     {
@@ -65,6 +65,10 @@ public class MovePlayer : MonoBehaviour
             playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
             gameOver = true;
+        } else if(collision.gameObject.CompareTag("ammo")){
+            ammo++;
+            Destroy(collision.gameObject);
+            textAmmo.text = ammo.ToString();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
