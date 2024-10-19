@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawn;
+    public float minTime = 1f, maxTime = 1.9f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,18 +26,12 @@ public class Spawner : MonoBehaviour
         {
             //Creacion de enemigos
             int randomindex = Random.Range(0, spawn.Length);
-            float minTime = 1f;
-            float maxTime = 1.9f;
+            
             float randomTime = Random.Range(minTime, maxTime);
 
-            Instantiate(spawn[randomindex], new Vector2(transform.position.x, spawn[randomindex].transform.position.y), Quaternion.identity);
+            Instantiate(spawn[randomindex], new Vector2(transform.position.x, spawn[randomindex].transform.position.y),spawn[randomindex].transform.rotation);
             yield return new WaitForSeconds(randomTime);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Destruir enemigo al momento de contactar con algun objeto
-        Destroy(collision.gameObject);
-    }
 }
