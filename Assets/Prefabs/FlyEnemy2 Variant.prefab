@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 381935720143503297, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7311278
+      objectReference: {fileID: 0}
+    - target: {fileID: 381935720143503297, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 381935720143503297, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.45323068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467817456001771573, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
+      propertyPath: crashAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a0c375b89064544a80acbf6be82a06e, type: 3}
     - target: {fileID: 1856054271853389082, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
       propertyPath: m_Color.b
       value: 0.1822268

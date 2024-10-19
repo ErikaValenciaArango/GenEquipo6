@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControllEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioClip crashAudio;
     void Start()
     {
         
@@ -14,5 +14,10 @@ public class ControllEnemy : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")){
+            AudioManager.Instance.PlaySFX(crashAudio);
+        }
     }
 }
