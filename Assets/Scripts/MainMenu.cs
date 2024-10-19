@@ -43,10 +43,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void Return(){
+    public void back(){
         optionsPanel.SetActive(true);
         SettingsPanel.SetActive(false);
-       // PanelTime.SetActive(true);
         Debug.Log("return");
     }
 }
