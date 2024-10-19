@@ -13,44 +13,35 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     [Header("Main Panel")]
     [SerializeField] GameObject MainPanel;
     [SerializeField] GameObject OptionPanel;
-  //  [SerializeField] GameObject LevelPanel;
-  //  [SerializeField] GameObject CallPanel;
-
-   /* [Header("CameraMenu")]
-    [SerializeField] Transform[] views;
-    [SerializeField] float transitionSpeed;
-    Transform currentView;
-*/
-
     [Header("Options Panel Game")]
     [SerializeField] GameObject optionsPanel;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject SettingsPanel;
-  /*  [SerializeField] GameObject PanelTime;*/
     [SerializeField] TMP_Text CoinsCollected;
+    private bool gameOver;
 
     [SerializeField]  int items;
- 
-    
-/*    [Header("levelsManager")]
-    [SerializeField] string LevelName;
-   
 
-    [Header("Director")]
-    [SerializeField] PlayableDirector playable;
-   */
-
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
-       // currentView = transform; // cameras
-
-        // Items
-        //items = PlayerPrefs.GetInt("ItemsSave");
         Time.timeScale = 1;
+        gameOver = false;
 
     }
 
@@ -59,7 +50,11 @@ public class GameManager : MonoBehaviour
 
     public void OptionsPanel()
     {
-
+        if (gameOver == true)
+        {
+            return;
+        }
+        Time.timeScale = 0;
         //MainPanel.SetActive(false);
         OptionPanel.SetActive(true);
         //currentView = views[2];
@@ -147,7 +142,7 @@ public class GameManager : MonoBehaviour
     public void goMainMenu()
     {
 
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
         PlayerPrefs.DeleteAll();
 
     }
@@ -178,17 +173,27 @@ public class GameManager : MonoBehaviour
         Debug.Log("coin");
 
     }
-/*    public void TotalCoinsSmall()
-    {
-        items++;
-        PlayerPrefs.SetInt("ItemsSave", items);
-        CoinsCollected.text = items.ToString();
-        Debug.Log("coin");
+    /*    public void TotalCoinsSmall()
+        {
+            items++;
+            PlayerPrefs.SetInt("ItemsSave", items);
+            CoinsCollected.text = items.ToString();
+            Debug.Log("coin");
 
-    }
-*/
+        }
+    */
 
     //--------------------------------------------Director / Timeline------------------------------------------------
 
-   
+    public void GameOverPanel()
+    {
+        Invoke("Pause", 1);
+        gameOverPanel.SetActive(true);
+        gameOver = true;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
 }

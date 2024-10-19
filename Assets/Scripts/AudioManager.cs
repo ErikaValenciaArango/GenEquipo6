@@ -33,4 +33,16 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
         musicSource.loop = true;
     }
+
+    public void MuteMusic() 
+    {
+        musicSource.volume = 0;
+        effectsSource.volume = 0;
+    }
+
+    public void VolumeMusic()
+    {
+        musicSource.volume = 1;
+        effectsSource.volume = 1;
+    }
 }

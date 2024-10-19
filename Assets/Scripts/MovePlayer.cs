@@ -49,6 +49,11 @@ public class MovePlayer : MonoBehaviour
             tiempoActual = 0;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            GameManager.Instance.OptionsPanel();
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,12 +65,13 @@ public class MovePlayer : MonoBehaviour
             playerAnimator.SetBool("bool_jump", false);
 
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
-            gameOver = true;
-        } else if(collision.gameObject.CompareTag("ammo")){
+            GameManager.Instance.GameOverPanel();
+        }
+        if(collision.gameObject.CompareTag("ammo")){
             ammo++;
             Destroy(collision.gameObject);
             textAmmo.text = ammo.ToString();
