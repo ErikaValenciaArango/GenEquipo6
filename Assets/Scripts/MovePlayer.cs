@@ -7,9 +7,12 @@ public class MovePlayer : MonoBehaviour
     Rigidbody2D rgbdPlayer;
     public float jumpForce = 1000;
     private bool tocaSuelo;
-    private float horizontal;
     public float speed;
     public bool gameOver =false;
+    public GameObject bullet;
+    public GameObject pointShot;
+    public float tiempoParaDisparar;
+    public float tiempoActual;
     void Start()
     {
         rgbdPlayer = GetComponent<Rigidbody2D>();
@@ -18,24 +21,30 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
 
-        if (horizontal != 0)
-        {
-            transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0, 0));
-        }
+        tiempoActual += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && tocaSuelo)
+        //Salto del personaje
+        if ( Input.GetKeyDown(KeyCode.Space)&& tocaSuelo)
         {
             rgbdPlayer.velocity = Vector3.zero;
-
-            rgbdPlayer.AddForce(transform.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
+            rgbdPlayer.AddForce(transform.up * jumpForce , ForceMode2D.Impulse );
             tocaSuelo = false;
         }
 
+        //Disparar proyectil
+        if (Input.GetKeyDown(KeyCode.F) && tiempoActual >= tiempoParaDisparar)
+          
+        {
+            Shot();
+            tiempoActual = 0;
+        }
+
     }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Evita saltar mas de una vez
         if (collision.gameObject.CompareTag("Suelo"))
         {
             tocaSuelo = true;
@@ -43,9 +52,16 @@ public class MovePlayer : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        //Evita saltar mas de una vez
+        if (collision.gameObject.CompareTag ("Suelo"))
         {
             tocaSuelo = false;
         }
+    }
+
+    private void Shot() 
+    {
+        //Creacion de proyectiles
+        Instantiate(bullet, pointShot.transform.position, Quaternion.identity);
     }
 }
