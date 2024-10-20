@@ -738,6 +738,10 @@ PrefabInstance:
       propertyPath: textAmmo
       value: 
       objectReference: {fileID: 1789137261}
+    - target: {fileID: 8097802148636822426, guid: 51db59f35178a1542b0985f1ed46a0db, type: 3}
+      propertyPath: levelMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

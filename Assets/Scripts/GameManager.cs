@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     public void playAgain()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Level2");//SceneManager.GetSceneByBuildIndex(2).buildIndex);
         //PanelTime.SetActive(true);
         Debug.Log("Again!!");
 
