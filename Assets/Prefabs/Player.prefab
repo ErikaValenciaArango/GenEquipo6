@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &8097802148636822426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,12 +165,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 15
   gameOver: 0
+  win: 0
   bullet: {fileID: 4198407097808742604, guid: 2df245d4241f4ac47a342332b89a6630, type: 3}
   pointShot: {fileID: 8108103967863158856}
   tiempoParaDisparar: 0.2
   tiempoActual: 0
   jumpClip: {fileID: 8300000, guid: 8243244011a62dd4297efa44fd0daeb3, type: 3}
   launchClip: {fileID: 8300000, guid: d162440348d23104cb08b2bfa2038a41, type: 3}
+  musicWin: {fileID: 8300000, guid: e04a8ef9c5242e24f8f309abf1d5ec69, type: 3}
+  musicLose: {fileID: 8300000, guid: 36d3677fcccbfb745a06daece19458db, type: 3}
   textAmmo: {fileID: 0}
 --- !u!95 &915906438226561180
 Animator:

@@ -26,15 +26,15 @@ public class AudioManager : MonoBehaviour
     {
         effectsSource.PlayOneShot(clip);
     }
-    public void PlayMusic(AudioClip music)
+    public void PlayMusic(AudioClip music, bool loop)
     {
         musicSource.Stop();
         musicSource.clip = music;
         musicSource.Play();
-        musicSource.loop = true;
+        musicSource.loop = loop;
     }
 
-    public void MuteMusic() 
+    public void MuteMusic()
     {
         musicSource.volume = 0;
         effectsSource.volume = 0;

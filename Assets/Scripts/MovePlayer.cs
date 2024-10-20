@@ -7,13 +7,13 @@ public class MovePlayer : MonoBehaviour
     private int ammo = 0;
     public float jumpForce;
     private bool tocaSuelo;
-    public bool gameOver = false;
+    public bool gameOver = false, win = false;
     public GameObject bullet;
     public GameObject pointShot;
     public float tiempoParaDisparar;
     public float tiempoActual;
     private Animator playerAnimator;
-    public AudioClip jumpClip, launchClip;
+    public AudioClip jumpClip, launchClip, musicWin, musicLose;
 
     [SerializeField]TextMeshProUGUI textAmmo;
 
@@ -30,7 +30,7 @@ public class MovePlayer : MonoBehaviour
         tiempoActual += Time.deltaTime;
 
         //Salto del personaje
-        if (Input.GetKeyDown(KeyCode.UpArrow) && tocaSuelo && GameManager.Instance.gameOver == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && tocaSuelo && GameManager.Instance.gameOver == false && !win)
         {
             rgbdPlayer.velocity = Vector3.zero;
             rgbdPlayer.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -74,7 +74,13 @@ public class MovePlayer : MonoBehaviour
             playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
             gameOver = true;
-            //GameManager.Instance.GameOverPanel();
+            AudioManager.Instance.PlayMusic(musicLose, false);
+            GameManager.Instance.GameOverPanel();
+        }
+        else if(collision.gameObject.CompareTag("Finish")){
+            win = true;
+            playerAnimator.SetBool("bool_run", false);
+            AudioManager.Instance.PlayMusic(musicWin, false);
         }
     }
 

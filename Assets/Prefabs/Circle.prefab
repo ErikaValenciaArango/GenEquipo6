@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4995925626849528789}
   - component: {fileID: 4515903042123168746}
   - component: {fileID: 1467189681180495296}
-  - component: {fileID: 3964995138075252531}
+  - component: {fileID: -7465313341663719732}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6920384511865059315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.78, y: -0.74, z: 40.21071}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 20.69, y: 0.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,8 +102,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 11d7ca5beed35a34087668b7c98533c7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -112,8 +112,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!58 &1467189681180495296
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3964995138075252531
+--- !u!114 &-7465313341663719732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,9 +158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6920384511865059315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b3767d09152f3439a10f2ee41c9925, type: 3}
+  m_Script: {fileID: 11500000, guid: 00209afccf11a0444b894a602b32652c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5500
-  tiempoParaDestruir: 2
-  tiempoActual: 0
+  speed: 2

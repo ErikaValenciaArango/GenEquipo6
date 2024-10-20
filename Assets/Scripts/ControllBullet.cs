@@ -23,8 +23,8 @@ public class ControllBullet : MonoBehaviour
             transform.Rotate(Vector3.forward);
         }
 
-        // If object goes off screen that is NOT the background, destroy it
-        if (transform.position.x > rightBound && !gameObject.CompareTag("Background"))
+        // If object goes off screen, destroy it
+        if (transform.position.x > rightBound )
         {
             Destroy(gameObject);
         }

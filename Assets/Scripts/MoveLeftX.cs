@@ -18,7 +18,7 @@ public class MoveLeftX : MonoBehaviour
     void Update()
     {
         // If game is over, move to the left
-        if (!playerControllerScript.gameOver)
+        if (!playerControllerScript.gameOver && !playerControllerScript.win)
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
         }
