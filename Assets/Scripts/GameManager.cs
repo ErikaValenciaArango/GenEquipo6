@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] TMP_Text CoinsCollected;
-    private bool gameOver;
+    public bool gameOver;
 
     [SerializeField]  int items;
 
@@ -196,4 +196,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
     }
+
 }

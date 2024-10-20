@@ -31,7 +31,7 @@ public class MovePlayer : MonoBehaviour
         tiempoActual += Time.deltaTime;
 
         //Salto del personaje
-        if (Input.GetKeyDown(KeyCode.UpArrow) && tocaSuelo)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && tocaSuelo && GameManager.Instance.gameOver == false)
         {
             rgbdPlayer.velocity = Vector3.zero;
             rgbdPlayer.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);

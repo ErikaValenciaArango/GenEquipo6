@@ -455,12 +455,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ec806551b48954896303062ed3772d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   spawn:
   - {fileID: 7084412889733032362, guid: 92ee322ff13673447ad93df3be376750, type: 3}
   minTime: 4.01
   maxTime: 5
 --- !u!4 &727046633
 Transform:
+=======
+  jumpForce: 15
+  speed: 1000
+  gameOver: 0
+  bullet: {fileID: 6920384511865059315, guid: ab0f1908b876d8c42964a97680e9765e, type: 3}
+  pointShot: {fileID: 768342607}
+  tiempoParaDisparar: 0.2
+  tiempoActual: 0
+  jumpClip: {fileID: 8300000, guid: 8243244011a62dd4297efa44fd0daeb3, type: 3}
+  launchClip: {fileID: 0}
+  textAmmo: {fileID: 0}
+--- !u!95 &826374223
+Animator:
+  serializedVersion: 5
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -821,6 +837,7 @@ MonoBehaviour:
   - {fileID: 1860359720656988337, guid: 5866fecfcafa01e43839a041c26e7a67, type: 3}
   minTime: 1
   maxTime: 1.9
+<<<<<<< Updated upstream
 --- !u!1001 &1633211886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -890,6 +907,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b86d525f0f6a40a41b706ed0b6f10fb9, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1722354352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1438,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 5670745214295194671, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -1437,6 +1457,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6947998379450225210, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
       propertyPath: m_IsActive
+=======
+    - target: {fileID: 4780891991264759023, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937631257392240339, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255168939247910511, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 100672896}
+    - target: {fileID: 6803516300061689810, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374811586809555597, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+>>>>>>> Stashed changes
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8198147572768286912, guid: 811f83feec6f0344fba9fed732cabb91, type: 3}
