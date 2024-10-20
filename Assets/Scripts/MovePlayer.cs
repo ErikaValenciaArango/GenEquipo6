@@ -5,9 +5,8 @@ public class MovePlayer : MonoBehaviour
 {
     Rigidbody2D rgbdPlayer;
     private int ammo = 0;
-    public float jumpForce = 1000;
+    public float jumpForce;
     private bool tocaSuelo;
-    public float speed;
     public bool gameOver = false;
     public GameObject bullet;
     public GameObject pointShot;
@@ -72,7 +71,6 @@ public class MovePlayer : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))   //Detecta si colisiono el jugador para pasar a estado de muerto
         {
-            Debug.Log("AAAAAAAFREEEZEEEER");
             playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
             gameOver = true;
