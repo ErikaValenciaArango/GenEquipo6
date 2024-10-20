@@ -20,7 +20,5 @@ public class MoveBackground : MonoBehaviour
         {
             transform.position = startPos;
         }
-            Debug.Log(transform.position.x);
-            Debug.Log(startPos.x - repeatWidth);
     }
 }
