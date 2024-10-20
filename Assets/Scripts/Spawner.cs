@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     {
         StartCoroutine(SpawnObstacle());
         StartCoroutine(SpawnAmmo());
-        Invoke("GameWin", 60);
+        Invoke("GameWin", 20);
     }
 
     // Update is called once per frame
