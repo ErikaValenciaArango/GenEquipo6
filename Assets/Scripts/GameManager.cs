@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] TMP_Text CoinsCollected;
+    [SerializeField] AudioClip levelMusic;
     public bool gameOver;
 
     [SerializeField]  int items;
@@ -99,6 +100,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        AudioManager.Instance.PlayMusic(levelMusic, true);
         //PanelTime.SetActive(true);
         Debug.Log("Again!!");
 
