@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 8398512dbcd292e4ea83d0897e1f3dff, type: 2}
     - target: {fileID: -3342041485415313170, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
       propertyPath: speed
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 381935720143503297, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
       propertyPath: m_FlipX
@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 444831126033401323, guid: 812be1d8af7298f468ca67aaeb530efe, type: 3}
+    - target: {fileID: 1467817456001771573, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
+      propertyPath: crashAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ee7700428183bf47a70664fb0270fe8, type: 3}
     - target: {fileID: 2361493148953313713, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
       propertyPath: m_Name
       value: Enemy Variant 1
@@ -70,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3356239063236869577, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 3356239063236869577, guid: ebca7a5d2abb96f44854efd79b8a1b0c, type: 3}
       propertyPath: m_LocalPosition.z
