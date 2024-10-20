@@ -40,6 +40,10 @@ public class MovePlayer : MonoBehaviour
             AudioManager.Instance.PlaySFX(jumpClip);
         }
 
+        if(Input.GetKeyDown(KeyCode.DownArrow) && !tocaSuelo){
+            rgbdPlayer.AddForce(transform.up * -jumpForce, ForceMode2D.Impulse);
+
+        }
         //Disparar proyectil
         if (Input.GetKeyDown(KeyCode.Space) && tiempoActual >= tiempoParaDisparar && ammo>0)
 
