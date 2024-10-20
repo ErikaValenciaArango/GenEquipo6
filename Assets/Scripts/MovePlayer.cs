@@ -14,7 +14,7 @@ public class MovePlayer : MonoBehaviour
     public float tiempoParaDisparar;
     public float tiempoActual;
     private Animator playerAnimator;
-    public AudioClip jumpClip;
+    public AudioClip jumpClip, launchClip;
 
     [SerializeField]TextMeshProUGUI textAmmo;
 
@@ -28,11 +28,10 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         tiempoActual += Time.deltaTime;
 
         //Salto del personaje
-        if (Input.GetKeyDown(KeyCode.Space) && tocaSuelo)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && tocaSuelo)
         {
             rgbdPlayer.velocity = Vector3.zero;
             rgbdPlayer.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -42,10 +41,12 @@ public class MovePlayer : MonoBehaviour
         }
 
         //Disparar proyectil
-        if (Input.GetKeyDown(KeyCode.F) && tiempoActual >= tiempoParaDisparar)
+        if (Input.GetKeyDown(KeyCode.Space) && tiempoActual >= tiempoParaDisparar && ammo>0)
 
         {
             Shot();
+            ammo --;
+            textAmmo.text = ammo.ToString();
             tiempoActual = 0;
         }
 
@@ -65,15 +66,20 @@ public class MovePlayer : MonoBehaviour
             playerAnimator.SetBool("bool_jump", false);
 
         }
-        if (collision.gameObject.CompareTag("Obstacle"))
+        else if (collision.gameObject.CompareTag("Obstacle"))   //Detecta si colisiono el jugador para pasar a estado de muerto
         {
             playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
+            gameOver = true;
             GameManager.Instance.GameOverPanel();
         }
-        if(collision.gameObject.CompareTag("ammo")){
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        //recoge los huesos del piso
+        if(other.gameObject.CompareTag("Ammo")){
             ammo++;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             textAmmo.text = ammo.ToString();
         }
     }
@@ -90,5 +96,6 @@ public class MovePlayer : MonoBehaviour
     {
         //Creacion de proyectiles
         Instantiate(bullet, pointShot.transform.position, Quaternion.identity);
+        AudioManager.Instance.PlaySFX(launchClip);
     }
 }
