@@ -43,7 +43,6 @@ public class MovePlayer : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.DownArrow) && !tocaSuelo){
             rgbdPlayer.AddForce(transform.up * -jumpForce, ForceMode2D.Impulse);
-
         }
         //Disparar proyectil
         if (Input.GetKeyDown(KeyCode.Space) && tiempoActual >= tiempoParaDisparar && ammo>0)
@@ -83,7 +82,13 @@ public class MovePlayer : MonoBehaviour
             win = true;
             playerAnimator.SetBool("bool_run", false);
             AudioManager.Instance.PlayMusic(musicWin, false);
+            Invoke("NextLevel", 5);
         }
+    }
+
+    private void NextLevel()
+    {
+        GameManager.Instance.play();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
