@@ -72,10 +72,11 @@ public class MovePlayer : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))   //Detecta si colisiono el jugador para pasar a estado de muerto
         {
+            Debug.Log("AAAAAAAFREEEZEEEER");
             playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
             gameOver = true;
-            GameManager.Instance.GameOverPanel();
+            //GameManager.Instance.GameOverPanel();
         }
     }
 
