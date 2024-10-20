@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
     public void play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        AudioManager.Instance.PlayMusic(levelMusic, true);
     }
 
        
@@ -101,7 +100,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        AudioManager.Instance.PlayMusic(levelMusic, true);
         //PanelTime.SetActive(true);
         Debug.Log("Again!!");
 

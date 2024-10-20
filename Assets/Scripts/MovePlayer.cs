@@ -13,12 +13,14 @@ public class MovePlayer : MonoBehaviour
     public float tiempoParaDisparar;
     public float tiempoActual;
     private Animator playerAnimator;
-    public AudioClip jumpClip, launchClip, musicWin, musicLose;
+    public AudioClip jumpClip, launchClip, musicWin, musicLose, levelMusic;
 
     [SerializeField]TextMeshProUGUI textAmmo;
 
+    
     void Start()
     {
+        AudioManager.Instance.PlayMusic(levelMusic, true);
         rgbdPlayer = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerAnimator.SetBool("bool_run", true);
