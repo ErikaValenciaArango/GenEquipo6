@@ -33,7 +33,6 @@ public class ControllBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         
         if(other.gameObject.CompareTag("Obstacle")){
-            Debug.Log("Colision");
             Destroy(gameObject);
             Destroy(other.gameObject);
             AudioManager.Instance.PlaySFX(destroyClip);

@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 15
-  speed: 1000
   gameOver: 0
   bullet: {fileID: 4198407097808742604, guid: 2df245d4241f4ac47a342332b89a6630, type: 3}
   pointShot: {fileID: 8108103967863158856}
