@@ -72,11 +72,8 @@ public class MovePlayer : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))   //Detecta si colisiono el jugador para pasar a estado de muerto
         {
-            playerAnimator.SetBool("bool_dead", true);
             Destroy(collision.gameObject);
-            gameOver = true;
-            AudioManager.Instance.PlayMusic(musicLose, false);
-            GameManager.Instance.GameOverPanel();
+            Lost();
         }
         else if(collision.gameObject.CompareTag("Finish")){
             win = true;
@@ -84,6 +81,14 @@ public class MovePlayer : MonoBehaviour
             AudioManager.Instance.PlayMusic(musicWin, false);
             Invoke("NextLevel", 5);
         }
+    }
+
+    public void Lost()
+    {
+        playerAnimator.SetBool("bool_dead", true);
+        gameOver = true;
+        AudioManager.Instance.PlayMusic(musicLose, false);
+        GameManager.Instance.GameOverPanel();
     }
 
     private void NextLevel()

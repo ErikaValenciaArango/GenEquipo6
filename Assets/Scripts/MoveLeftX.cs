@@ -24,9 +24,14 @@ public class MoveLeftX : MonoBehaviour
         }
 
         // If object goes off screen that is NOT the background, destroy it
-        if (transform.position.x < leftBound && !gameObject.CompareTag("Background"))
+        if (transform.position.x < leftBound && !gameObject.CompareTag("Background") && !gameObject.CompareTag("Finish"))
         {
             Destroy(gameObject);
+        }
+
+        if (gameObject.CompareTag("Finish") && transform.position.x < leftBound)
+        {
+            playerControllerScript.Lost();
         }
 
     }

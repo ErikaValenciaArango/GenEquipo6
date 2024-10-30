@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     public void VolumeMusic()
     {
-        musicSource.volume = 1;
-        effectsSource.volume = 1;
+        musicSource.volume = 0.4f;
+        effectsSource.volume = 0.8f;
     }
 }

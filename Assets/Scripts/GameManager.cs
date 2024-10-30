@@ -142,10 +142,9 @@ public class GameManager : MonoBehaviour
     
     public void goMainMenu()
     {
-
         SceneManager.LoadScene("MainMenu");
         PlayerPrefs.DeleteAll();
-
+        AudioManager.Instance.PlayMusic(levelMusic, true);
     }
 
     public void QuitGame()
@@ -154,6 +153,15 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void Mute()
+    {
+        AudioManager.Instance.MuteMusic();
+    }
+
+    public void UnMute()
+    {
+        AudioManager.Instance.VolumeMusic();
+    }
     /*public void loadLevel(int Level)
     {
         SceneManager.LoadScene(Level);
